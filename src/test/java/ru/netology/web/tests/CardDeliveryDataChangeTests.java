@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CardDeliveryDataChangeTest {
+public class CardDeliveryDataChangeTests {
 
     @Test
     void shouldSendFormAgain() {
