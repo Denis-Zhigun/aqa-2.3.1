@@ -218,7 +218,7 @@ public class OverallRegressCardDeliveryTest {
                 .shouldHave(text("Я соглашаюсь с условиями обработки и использования моих персональных данных"));
     }
     // Корректное заполнение
-    // @Test
+    @Test
     void shouldSuccessSendForm() {
         String date = DataGenerator.setDate(7);
         $("[data-test-id=city] input").setValue(DataGenerator.setCity());

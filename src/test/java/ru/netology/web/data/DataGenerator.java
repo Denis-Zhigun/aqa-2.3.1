@@ -13,14 +13,6 @@ public class DataGenerator {
 
     private static final Faker faker = new Faker(new Locale("ru"));
 
-    @Value
-    public static class DataSetClass {
-        String date;
-        String name;
-        String phone;
-        String city;
-    }
-
     public static String setDate(int plusDays) {
         return LocalDate.now().plusDays(plusDays).format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
@@ -34,7 +26,6 @@ public class DataGenerator {
     }
 
     public static String setCity() {
-        String[] city = {"Екатеринбург", "Новосибирск", "Омск", "Томск", "Тюмень", "Иркутск", "Владивосток",""};
         int rand = new Random().nextInt(city.length);
         return city[rand];
     }
