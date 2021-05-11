@@ -25,9 +25,7 @@ public class DataGenerator {
         return faker.numerify("+79#########");
     }
 
-    public static String setCity() {
-        string[] city = {"Екатеринбург", "Новосибирск", "Омск", "Томск", "Тюмень", "Иркутск", "Владивосток"};
-        int rand = new Random().nextInt(city.length);
-        return city[rand];
+    public static String getNewCity() {
+        return faker.address().city();
     }
 }

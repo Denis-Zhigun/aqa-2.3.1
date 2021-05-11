@@ -35,7 +35,7 @@ public class OverallRegressCardDeliveryTest {
     // заполнение только поля Город
     @Test
     void shouldGetErrorIfOnlyCity() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $(withText("Запланировать")).click();
         $("[data-test-id=date] .input_invalid .input__sub")
                 .shouldHave(text("Неверно введена дата"));
@@ -79,7 +79,7 @@ public class OverallRegressCardDeliveryTest {
 
     // незаполнение поля Дата
     void shouldGetErrorWithoutDate() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=name] input").setValue(DataGenerator.setName());
         $("[data-test-id=phone] input").setValue(DataGenerator.setPhone());
         $("[data-test-id=agreement]").click();
@@ -91,7 +91,7 @@ public class OverallRegressCardDeliveryTest {
     // использование недопустимого значения поля Дата
     @Test
     void shouldGetErrorIfInvalidDate() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(1));
         $("[data-test-id=name] input").setValue(DataGenerator.setName());
         $("[data-test-id=phone] input").setValue(DataGenerator.setPhone());
@@ -116,7 +116,7 @@ public class OverallRegressCardDeliveryTest {
     // незаполнение поля Имя
     @Test
     void shouldGetErrorWithoutName() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(5));
         $("[data-test-id=phone] input").setValue(DataGenerator.setPhone());
         $("[data-test-id=agreement]").click();
@@ -128,7 +128,7 @@ public class OverallRegressCardDeliveryTest {
     // использование недопустимого значения поля Имя
     @Test
     void shouldGetErrorIfInvalidName() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(5));
         $("[data-test-id=name] input").setValue("Inna");
         $("[data-test-id=phone] input").setValue(DataGenerator.setPhone());
@@ -141,7 +141,7 @@ public class OverallRegressCardDeliveryTest {
 
     // использование недопустимого значения поля Имя 'Ё'
     void shouldGetErrorIfInvalidYeName() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(5));
         $("[data-test-id=name] input").setValue("Алёна");
         $("[data-test-id=phone] input").setValue(DataGenerator.setPhone());
@@ -166,7 +166,7 @@ public class OverallRegressCardDeliveryTest {
     // незаполнение поля Телефон
     @Test
     void shouldGetErrorWithoutPhone() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(5));
         $("[data-test-id=name] input").setValue(DataGenerator.setName());
         $("[data-test-id=agreement]").click();
@@ -179,7 +179,7 @@ public class OverallRegressCardDeliveryTest {
 
 
     void shouldGetErrorIfInvalidPhone() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(5));
         $("[data-test-id=name] input").setValue(DataGenerator.setName());
         $("[data-test-id=phone] input").setValue("89530000000");
@@ -208,7 +208,7 @@ public class OverallRegressCardDeliveryTest {
     // невыставление чекбокса Согласие на обработку персональных данных
     @Test
     void shouldGetErrorWithoutPDAgreement() {
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(5));
         $("[data-test-id=name] input").setValue(DataGenerator.setName());
         $("[data-test-id=phone] input").setValue(DataGenerator.setPhone());
@@ -221,7 +221,7 @@ public class OverallRegressCardDeliveryTest {
     @Test
     void shouldSuccessSendForm() {
         String date = DataGenerator.setDate(7);
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").setValue(date);
         $("[data-test-id=name] input").setValue(DataGenerator.setName());
         $("[data-test-id=phone] input").setValue(DataGenerator.setPhone());

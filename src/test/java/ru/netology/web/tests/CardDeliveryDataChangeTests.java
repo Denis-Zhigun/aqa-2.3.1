@@ -15,7 +15,7 @@ public class CardDeliveryDataChangeTests {
     void shouldSendFormAgain() {
         open("http://localhost:9999/");
 
-        $("[data-test-id=city] input").setValue(DataGenerator.setCity());
+        $("[data-test-id=city] input").setValue(DataGenerator.getNewCity());
         $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL, "A"), Keys.DELETE);
         $("[data-test-id=date] input").setValue(DataGenerator.setDate(5));
         $("[data-test-id=name] input").setValue(DataGenerator.setName());
