@@ -26,6 +26,7 @@ public class DataGenerator {
     }
 
     public static String setCity() {
+        string[] city = {"Екатеринбург", "Новосибирск", "Омск", "Томск", "Тюмень", "Иркутск", "Владивосток"};
         int rand = new Random().nextInt(city.length);
         return city[rand];
     }
